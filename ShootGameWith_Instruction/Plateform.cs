@@ -52,6 +52,11 @@ namespace ShootGameWith_Instruction
 
         }
 
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ShtAway_Click(object sender, EventArgs e)
         {
             // this is the forth stage of the game here we have only 2 chance to fire and can have 2 click 
