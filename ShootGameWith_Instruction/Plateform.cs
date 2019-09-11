@@ -75,7 +75,7 @@ namespace ShootGameWith_Instruction
                     
                     MessageBox.Show("You are the winner of the game");
                     stages = 5;
-                    shotAway_click = 3;
+                    shotAway_click = 5;
                     again.Visible = true;
                 }
                 if (shotAway_click==2) {
