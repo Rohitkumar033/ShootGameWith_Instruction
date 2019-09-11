@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,7 +41,12 @@ namespace ShootGameWith_Instruction
         {
             //this is The first step of the game after that we can load the gun woth bullet
             stages=1;
-            pictureBox1.ImageLocation = "first.jpg";
+
+            Assembly myAssembly = Assembly.GetExecutingAssembly();
+            Stream myStream = myAssembly.GetManifestResourceStream("ShootGameWith_Instruction.Resources.first.jpg");
+            Bitmap bmp = new Bitmap(myStream);
+            pictureBox1.Image = bmp;
+            
         }
 
         private void again_Click(object sender, EventArgs e)
@@ -63,7 +70,7 @@ namespace ShootGameWith_Instruction
             if (stages==4) {
                 shotAway_click++;
                 if (shotAway_click==first_Fire) {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer("fire.wav");
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.fire);
                     player.Play();
                     
                     MessageBox.Show("You are the winner of the game");
@@ -89,7 +96,12 @@ namespace ShootGameWith_Instruction
             if (stages == 1)
             {
                 //this is the 2nd step of the source code in this code the gun load the bullet 
-                pictureBox1.ImageLocation = "2nd.jpg";
+
+                Assembly myAssembly = Assembly.GetExecutingAssembly();
+                Stream myStream = myAssembly.GetManifestResourceStream("ShootGameWith_Instruction.Resources.2nd.jpg");
+                Bitmap bmp = new Bitmap(myStream);
+                pictureBox1.Image = bmp;
+                
                 stages=2;
             }
             else {
@@ -102,7 +114,11 @@ namespace ShootGameWith_Instruction
             if (stages == 2)
             {
                 // this is the 3rd stages of the game in this after loading the bullet in the gun spin the roller of the gun
-                pictureBox1.ImageLocation = "spin.jpg";
+                Assembly myAssembly = Assembly.GetExecutingAssembly();
+                Stream myStream = myAssembly.GetManifestResourceStream("ShootGameWith_Instruction.Resources.spin.jpg");
+                Bitmap bmp = new Bitmap(myStream);
+                pictureBox1.Image = bmp;
+
                 stages=3;
             }
             else {
@@ -118,22 +134,25 @@ namespace ShootGameWith_Instruction
 
                 shoot_click++;
 
-                pictureBox1.ImageLocation = "third.jpg";
-
+                Assembly myAssembly = Assembly.GetExecutingAssembly();
+                Stream myStream = myAssembly.GetManifestResourceStream("ShootGameWith_Instruction.Resources.third.jpg");
+                Bitmap bmp = new Bitmap(myStream);
+                pictureBox1.Image = bmp;
+                
                 if (shoot_click == first_Fire)
                 {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer("fire.wav");
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.fire);
                     player.Play();
                 }
                 else if(shoot_click<=6){
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer("blank.wav");
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.blank);
                     player.Play();
                 }
                 if (secnd_Fire == shoot_click) {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer("fire.wav");
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.fire);
                     player.Play();
                 } else if (shoot_click>6 && shoot_click<=12) {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer("blank.wav");
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.blank);
                     player.Play();
                 }
                 if (shoot_click>=12) {
