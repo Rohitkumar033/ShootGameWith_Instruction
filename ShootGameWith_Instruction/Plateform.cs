@@ -56,6 +56,7 @@ namespace ShootGameWith_Instruction
             firstFire();
             secndFire();
             again.Visible = false;
+            ShtAway.Enabled = true;
 
         }
 
@@ -76,16 +77,20 @@ namespace ShootGameWith_Instruction
                     MessageBox.Show("You are the winner of the game");
                     stages = 5;
                     shotAway_click = 5;
+                    ShtAway.Enabled = false;
+
                     again.Visible = true;
                 }
                 if (shotAway_click==2) {
                     stages = 5;
                     shotAway_click = 3;
                     MessageBox.Show("you won 100 dollar ");
+                    ShtAway.Enabled = false;
                     again.Visible = true;
                 }
                 if (shotAway_click>2) {
                     MessageBox.Show("your game is over click on try again to play the game once again ");
+                    ShtAway.Enabled = false;
                 }
 
             }
