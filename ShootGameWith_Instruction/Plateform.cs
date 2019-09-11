@@ -81,7 +81,7 @@ namespace ShootGameWith_Instruction
                 if (shotAway_click==2) {
                     stages = 5;
                     shotAway_click = 3;
-                    MessageBox.Show("you lose the game ");
+                    MessageBox.Show("you won 100 dollar ");
                     again.Visible = true;
                 }
                 if (shotAway_click>2) {
@@ -151,13 +151,13 @@ namespace ShootGameWith_Instruction
                 if (secnd_Fire == shoot_click) {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.fire);
                     player.Play();
-                } else if (shoot_click>6 && shoot_click<=12) {
+                } else if (shoot_click>6 && shoot_click<=6) {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.blank);
                     player.Play();
                 }
-                if (shoot_click>=12) {
+                if (shoot_click>=3) {
                     stages = 4;
-                    MessageBox.Show("Now your trigger are finish");
+                    MessageBox.Show("you lose the game");
                 }
                 
             }
