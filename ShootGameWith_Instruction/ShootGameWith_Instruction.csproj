@@ -90,25 +90,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\blank.wav" />
+    <EmbeddedResource Include="Resources\blank.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fire.wav" />
+    <EmbeddedResource Include="Resources\fire.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2nd.jpg" />
+    <EmbeddedResource Include="Resources\2nd.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\first.jpg" />
+    <EmbeddedResource Include="Resources\first.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\second.jpg" />
+    <EmbeddedResource Include="Resources\second.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\spin.jpg" />
+    <EmbeddedResource Include="Resources\spin.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\third.jpg" />
+    <EmbeddedResource Include="Resources\third.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
