@@ -70,25 +70,26 @@ namespace ShootGameWith_Instruction
             // this is the forth stage of the game here we have only 2 chance to fire and can have 2 click 
             if (stages==4) {
                 shotAway_click++;
-                if (shotAway_click==first_Fire) {
+                if (shotAway_click>=1) {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.fire);
                     player.Play();
                     
-                    MessageBox.Show("You are the winner of the game");
+                    
                     stages = 5;
-                    shotAway_click = 5;
+                    shotAway_click = 2;
+                        MessageBox.Show("You are the winner of the game");
                     ShtAway.Enabled = false;
 
                     again.Visible = true;
                 }
-                if (shotAway_click==2) {
+                if (shotAway_click==3) {
                     stages = 5;
                     shotAway_click = 3;
                     MessageBox.Show("you won 100 dollar ");
                     ShtAway.Enabled = false;
                     again.Visible = true;
                 }
-                if (shotAway_click>2) {
+                if (shotAway_click>4) {
                     MessageBox.Show("your game is over click on try again to play the game once again ");
                     ShtAway.Enabled = false;
                 }
@@ -146,21 +147,21 @@ namespace ShootGameWith_Instruction
                 
                 if (shoot_click == first_Fire)
                 {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.fire);
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.shootsd);
                     player.Play();
                 }
                 else if(shoot_click<=6){
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.blank);
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.shootsd);
                     player.Play();
                 }
                 if (secnd_Fire == shoot_click) {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.fire);
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.shootsd);
                     player.Play();
                 } else if (shoot_click>6 && shoot_click<=6) {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.blank);
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(ShootGameWith_Instruction.Properties.Resources.shootsd);
                     player.Play();
                 }
-                if (shoot_click>=3) {
+                if (shoot_click>=6) {
                     stages = 4;
                     MessageBox.Show("you lose the game");
                 }

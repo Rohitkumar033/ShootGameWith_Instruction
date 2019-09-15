@@ -110,5 +110,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\third.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\shootsd.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
